@@ -9,6 +9,15 @@ import os
 import subprocess as sub
 from pygame import mixer
 from tkinter import *
+from PIL import Image, ImageTk
+
+main_window = Tk()
+main_window.title = ("Lizzy AI")
+
+main_window.geometry("800x400")
+
+main_window.resizable(False, False)
+
 
 name = "lizzy"
 listener = sr.Recognizer()
@@ -120,3 +129,5 @@ def write(f):
     f.close()
     talk("Listo, puedes revisarlo")
     sub.Popen("nota.txt", shell=True)
+    
+main_window.mainloop()
